@@ -1,6 +1,7 @@
 package com.jhondev.service;
 
 import com.jhondev.model.Produto;
+
 import java.util.ArrayList;
 
 public class ProdutoService {
@@ -11,15 +12,15 @@ public class ProdutoService {
     }
 
     public void listarProdutos() {
-    if (produtos.isEmpty()) {
-        System.out.println("Nenhum produto cadastrado.");
-        return;
-    }
+        if (produtos.isEmpty()) {
+            System.out.println("Nenhum produto cadastrado.");
+            return;
+        }
 
-    for (Produto p : produtos) {
-        System.out.println(p);
+        for (Produto p : produtos) {
+            System.out.println(p);
+        }
     }
-}
 
     public Produto buscarProduto(int id) {
         for (Produto p : produtos) {
@@ -40,5 +41,9 @@ public class ProdutoService {
         }
 
         return false;
+    }
+
+    public boolean listaVazia() {
+        return produtos.isEmpty();
     }
 }

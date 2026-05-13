@@ -68,7 +68,12 @@ public class View {
     }
 
     private void buscar() {
-        System.out.print("Id: ");
+        if (service.listaVazia()) {
+            System.out.println("Nenhum produto cadastrado.");
+            return;
+        }
+
+        System.out.println("ID:");
         int id = scanner.nextInt();
         scanner.nextLine();
 
@@ -82,6 +87,11 @@ public class View {
     }
 
     private void remover() {
+        if (service.listaVazia()) {
+            System.out.println("Nenhum produto cadastrado.");
+            return;
+        }
+
         System.out.println("Id:");
         int id = scanner.nextInt();
         scanner.nextLine();
